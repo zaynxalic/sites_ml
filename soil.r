@@ -36,9 +36,9 @@ train_index <- createDataPartition( y = validsoilSample$h_soil_water_stat,
                                     list = FALSE,
                                     times = 1)
 
-train_data <- (soil[c('labm_code','labr_value','h_soil_water_stat')])[train_index,]
+train_data <- (validsoilSample[c('labm_code','labr_value','h_soil_water_stat')])[train_index,]
 
-test_data <- (soil[c('labm_code','labr_value','h_soil_water_stat')])[-train_index,]
+test_data <- (validsoilSample[c('labm_code','labr_value','h_soil_water_stat')])[-train_index,]
 
 fit_Control <- trainControl(method = "cv", number = 10,savePredictions = TRUE)
 
